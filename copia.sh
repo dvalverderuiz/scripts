@@ -1,14 +1,14 @@
 #!/bin/bash
 
 FECHA=$(date "+%Y-%m-%d")
-ORIGEN_COPIAS="/home/dvalverde/sistemas/dircopias/"
-DESTINO_COMPRIMIDOS="/home/dvalverde/sistemas/dircomprimidos/"
-DESTINO="/dev/sdb/"
+ORIGEN_COPIAS="/home/david/scripts/dircopias/"
+DESTINO_COMPRIMIDOS="/home/david/scripts/dircomprimidos/"
+DESTINO="/home/david/scripts/destino"
 NOMBRE="backup_$FECHA"
 
-echo "Comprimiendo $ORIGEN_COPIAS"
+echo "· Comprimiendo..."
 tar -czf "$DESTINO_COMPRIMIDOS$NOMBRE" -C "$ORIGEN_COPIAS" .
-echo "Comprimido en $DESTINO_COMPRIMIDOS [HECHO]"
+echo "· Comprimido en $DESTINO_COMPRIMIDOS [HECHO]"
 
 
 if [ ! -d "$ORIGEN_COPIAS" ]; then
@@ -21,9 +21,9 @@ if [ ! -d "$DESTINO_COMPRIMIDOS" ]; then
   exit 1
 fi
 
-echo "Copiando los archivos a $DESTINO..."
+echo "· Copiando los archivos..."
 cp -r "$DESTINO_COMPRIMIDOS"/* "$DESTINO"
-echo "Copiado en $DESTINO [HECHO]"
+echo "· Copiado en $DESTINO [HECHO]"
 
 if [ $? -eq 0 ]; then
   echo "Backup completado correctamente."
