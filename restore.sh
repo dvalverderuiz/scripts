@@ -6,6 +6,9 @@
 RAIZ_BACKUP="/home/david/scripts/destino"
 
 FECHA_ARCHIVO=$1
+# Buscar la manera de que sea lo máximo escalable posible.
+# Mirar de implementar USUARIO=$2 para que este disponible en todas las máquinas. 
+# Ejecutar un try para crear la estructura en la máquina cliente si no existe.
 NOMBRE="backup_"
 
 ARCHIVO_A_RECUPERAR=$NOMBRE$FECHA_ARCHIVO
