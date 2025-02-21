@@ -3,6 +3,8 @@
 # Script de restore de backup, cargado en memoria y habrá que pasarle parámetros como 
 # la fecha
 
+# Para meter el script en memoria, mover a /usr/local/bin/
+
 FECHA_ARCHIVO=$1
 NOMBRE="backup_"
 RAIZ_BACKUP="/home/david/scripts/destino"
