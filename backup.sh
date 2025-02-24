@@ -2,8 +2,8 @@
 
 # Parámetros
 PARAMETRO=$1
-USUARIO_REMOTO="admin_backup"  # Cambia esto por el usuario remoto
-IP_REMOTA="100.77.20.47"  # Cambia esto por la IP o hostname de la máquina remota
+USUARIO_REMOTO="admin_backup"  
+IP_REMOTA="100.77.20.47"  
 
 # Rutas
 DIR_LOCAL="/dir_${USER}_backup"
