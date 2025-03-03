@@ -6,10 +6,10 @@ USUARIO_REMOTO="admin_backup"
 IP_REMOTA="100.77.20.47"  
 
 # Rutas
-DIR_LOCAL="/dir_${USER}_backup"
-DIR_REMOTO="/dir_${USER}_backup"
+DIR_LOCAL="/dir_${whoami}_backup"
+DIR_REMOTO="/dir_${whoami}_backup"
 ARCHIVO_LOG="$DIR_LOCAL/logs.log"
-DIR_HOME="/home/${USER}"
+DIR_HOME="/home/${whoami}"
 
 
 # Función para escribir en el log
@@ -50,7 +50,7 @@ elif [ "$PARAMETRO" == "full" ]; then
 	
 	# Full local
 	TAR_LOCAL="$DIR_HOME/$NOMBRE_BACKUP"
-    tar -czf "$TAR_LOCAL" -C "$(dirname "$DIR_HOME")" "$(basename "$NOMBRE_BACKUP")"
+    tar -czf "$TAR_LOCAL" -C "$(dirname "$DIR_HOME")" "$(basename "$DIR_HOME")"
     escribir_log "Full backup automático local creado en $TAR_LOCAL."
 	
 	# Full remoto
