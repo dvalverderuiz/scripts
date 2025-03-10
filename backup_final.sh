@@ -32,7 +32,7 @@ backup_incremental() {
     TAR_LOCAL="$DIR_LOCAL/$NOMBRE_BACKUP"
     TAR_REMOTO="$DIR_REMOTO/$NOMBRE_BACKUP"
     
-    tar --listed-incremental="$DIR_LOCAL/snapshot.snar" -czf "$TAR_LOCAL" "$DIR_HOME"
+    tar --listed-incremental="$DIR_LOCAL/snapshot.snar" -czf "$TAR_LOCAL" -C "$DIR_HOME" .
     escribir_log "Backup incremental creado en $TAR_LOCAL."
     
     scp "$TAR_LOCAL" "${USUARIO_REMOTO}@${IP_REMOTA}:$TAR_REMOTO"
