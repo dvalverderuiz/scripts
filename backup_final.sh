@@ -31,6 +31,9 @@ backup_incremental() {
     NOMBRE_BACKUP="backup_incremental_$FECHA.tar.gz"
     TAR_LOCAL="$DIR_LOCAL/$NOMBRE_BACKUP"
     TAR_REMOTO="$DIR_REMOTO/$NOMBRE_BACKUP"
+
+    # Revisar si esta tar podría funcionar:
+    tar --verbose --create --file=/mnt/data/documents0.tar  --listed-incremental=/mnt/data/documents.snar  ~/Documents    
     
     tar --listed-incremental="$DIR_LOCAL/snapshot.snar" -czf "$TAR_LOCAL" -C "$DIR_HOME" .
     escribir_log "Backup incremental creado en $TAR_LOCAL."
